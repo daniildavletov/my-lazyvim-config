@@ -14,6 +14,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+require("config.clipboard")
+require("config.keymaps")
+require("config.options")
+require("config.spell")
+
 require("lazy").setup({
   spec = {
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
